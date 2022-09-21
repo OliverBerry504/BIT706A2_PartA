@@ -6,9 +6,9 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    public partial class EditCustomerForm : Form1
+    public partial class EditCustomerForm : ParentForm
     {
         private Customer selected;
 
@@ -37,7 +37,7 @@ namespace BIT706_A2_OliverBerry_PartA
 
                 // return to 'Manage Customers' window
                 this.Visible = false;
-                ManageForm manageForm = new ManageForm();
+                ManageCustomersForm manageForm = new ManageCustomersForm();
                 manageForm.Show();
             }
             else MessageBox.Show(Ctrl.ErrorMessage); // error
@@ -46,7 +46,7 @@ namespace BIT706_A2_OliverBerry_PartA
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ManageForm manageForm = new ManageForm();
+            ManageCustomersForm manageForm = new ManageCustomersForm();
             manageForm.Show();
         }
     }

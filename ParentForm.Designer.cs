@@ -1,7 +1,7 @@
 ﻿
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    partial class Form1
+    partial class ParentForm
     {
         /// <summary>
         ///  Required designer variable.

@@ -2,11 +2,11 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    public partial class ManageForm : Form1
+    public partial class ManageCustomersForm : ParentForm
     {
-        public ManageForm()
+        public ManageCustomersForm()
         {
             InitializeComponent();
             DisplayAll();

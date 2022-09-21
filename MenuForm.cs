@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    public partial class MenuForm : Form1
+    public partial class MenuForm : ParentForm
     {
         public MenuForm()
         {
@@ -18,10 +18,19 @@ namespace BIT706_A2_OliverBerry_PartA
         private void Btn_mng_cst_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ManageForm manageForm = new ManageForm();
-            manageForm.Show();
-            manageForm.Tag = this;
-            manageForm.Location = this.Location;
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
+            form.Tag = this;
+            form.Location = this.Location;
+        }
+
+        private void Btn_mng_accs_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            ManageAccountsForm form = new ManageAccountsForm();
+            form.Show();
+            form.Tag = this;
+            form.Location = this.Location;
         }
     }
 }

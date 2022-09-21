@@ -1,7 +1,7 @@
 ﻿
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    partial class ManageForm
+    partial class ManageCustomersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -114,7 +114,7 @@ namespace BIT706_A2_OliverBerry_PartA
             this.lbCstDetails.Size = new System.Drawing.Size(0, 15);
             this.lbCstDetails.TabIndex = 5;
             // 
-            // ManageForm
+            // ManageCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +127,7 @@ namespace BIT706_A2_OliverBerry_PartA
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Name = "ManageForm";
+            this.Name = "ManageCustomersForm";
             this.Text = "Manage";
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.btnDelete, 0);

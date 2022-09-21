@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    class Customer
+    public class Customer
     {
-        private string name;
         private static int nextID = 1;
         private int iD;
+        private bool isStaff;
+        private string name;
 
         public string Name { get => name; set => name = value; }
+        public bool IsStaff { get => isStaff; set => isStaff = value; }
+
         public int ID { get => iD; set => iD = value; }
 
         public Customer()
@@ -20,9 +23,10 @@ namespace BIT706_A2_OliverBerry_PartA
             nextID++;
         }
 
-        public Customer(string newName) : this()
+        public Customer(string newName, bool newIsStaff) : this()
         {
-            Name = newName;
+            name = newName;
+            IsStaff = newIsStaff;
         }
 
         // checks if name given is valid
@@ -32,6 +36,15 @@ namespace BIT706_A2_OliverBerry_PartA
                 {
                     throw new Exception("Invalid customer name");
                 }
+        }
+
+        public double Discount(double fee)
+        {
+            if (isStaff)
+            {
+                fee /= 2;
+            }
+            return fee;
         }
 
         public override string ToString()

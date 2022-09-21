@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BIT706_A2_OliverBerry_PartA
+namespace BIT706_A3_OliverBerry
 {
-    public partial class Form1 : Form
+    public partial class ParentForm : Form
     {
         private static Controller ctrl = new Controller();
         internal Controller Ctrl { get => ctrl; set => ctrl = value; }
-        public Form1()
+        public ParentForm()
         {
             InitializeComponent();
         }
