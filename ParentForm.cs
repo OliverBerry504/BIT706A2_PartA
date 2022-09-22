@@ -12,8 +12,10 @@ namespace BIT706_A3_OliverBerry
 {
     public partial class ParentForm : Form
     {
-        private static Controller ctrl = new Controller();
-        internal Controller Ctrl { get => ctrl; set => ctrl = value; }
+        private static CustController custCtrl = new CustController();
+        private static AccController accCtrl = new AccController();
+        internal CustController CustCtrl { get => custCtrl; set => custCtrl = value; }
+        internal AccController AccCtrl { get => accCtrl; set => accCtrl = value; }
         public ParentForm()
         {
             InitializeComponent();

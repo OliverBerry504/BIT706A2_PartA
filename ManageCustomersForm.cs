@@ -16,7 +16,7 @@ namespace BIT706_A3_OliverBerry
         private void DisplayAll()
         {
             lstAllCst.Items.Clear();
-            foreach (Customer c in Ctrl.GetAllCustomers())
+            foreach (Customer c in CustCtrl.GetAllCustomers())
             {
                 lstAllCst.Items.Add(c);
             }
@@ -49,7 +49,7 @@ namespace BIT706_A3_OliverBerry
                 {
                     try
                     {
-                        Customer c = Ctrl.FindCustomerByID(input);
+                        Customer c = CustCtrl.FindCustomerByID(input);
                         SetListBox(c);
                     }
                     catch (Exception error)
@@ -72,7 +72,7 @@ namespace BIT706_A3_OliverBerry
         // Edit Button
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (lstAllCst.SelectedItem is null)
+            if (lstAllCst.SelectedItem is null)  // repeated again for manage accounts form
             {
                 MessageBox.Show("No available selection");
             }
@@ -80,7 +80,7 @@ namespace BIT706_A3_OliverBerry
             {
                 try
                 {
-                    Customer c = Ctrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
+                    Customer c = CustCtrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
                     {
                         this.Visible = false;
                         EditCustomerForm editCustomerForm = new EditCustomerForm(c);
@@ -97,7 +97,7 @@ namespace BIT706_A3_OliverBerry
         // Delete Button
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (Ctrl.DeleteCustomer((Customer)lstAllCst.SelectedItem))
+            if (CustCtrl.DeleteCustomer((Customer)lstAllCst.SelectedItem))
             {
                 MessageBox.Show("Customer has been deleted");
                 DisplayAll();
@@ -127,6 +127,30 @@ namespace BIT706_A3_OliverBerry
             using StreamWriter w = File.AppendText("log.txt");
             w.WriteLine("Cannot set list box selection");
             return false;
+        }
+
+        private void Btn_mng_accs_Click(object sender, EventArgs e)
+        {
+            if (lstAllCst.SelectedItem is null)
+            {
+                MessageBox.Show("No available selection");
+            }
+            else
+            {
+                try
+                {
+                    Customer c = CustCtrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
+                    {
+                        this.Visible = false;
+                        ManageAccountsForm form = new ManageAccountsForm(c);
+                        form.Show();
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
         }
     }
 }

@@ -12,29 +12,37 @@ namespace BIT706_A3_OliverBerry
 {
     public partial class ManageAccountsForm : ParentForm
     {
-        Everyday accEveryday;
-        Investment accInvestment;
-        Omni accOmni;
+        private Customer selected;
+
+        internal Customer Selected { get => selected; set => selected = value; }
 
         public ManageAccountsForm()
         {
             InitializeComponent();
+            DisplayAll();
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        // Display all customers
+        private void DisplayAll()
         {
-            // Create customer
-            Customer customer = new Customer("Oliver", true);
-            // Set combobox selections (accounts)
+            lstAllAcc.Items.Clear(); // create lstallacc
+            foreach (Customer c in CustCtrl.GetAllCustomers())
+            {
+                lstAllAcc.Items.Add(c);
+            }
+            try
+            {
+                lstAllAcc.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                lbAccDetails.Text = "No customer data"; // also this
+            }
+        }
 
-            // Create accounts for above customer
-            accEveryday = new Everyday(customer);
-            accInvestment = new Investment(customer, 6);
-            accOmni = new Omni(customer, 5000);
-
-            // Set the selection types
-            selectAcc.Items.Add(accEveryday);
-            selectAcc.Items.Add(accInvestment);
-            selectAcc.Items.Add(accOmni);
+        internal ManageAccountsForm(Customer c) : this()
+        {
+            Selected = c;
         }
 
         // Make deposit
@@ -42,26 +50,15 @@ namespace BIT706_A3_OliverBerry
         {
             if (double.TryParse(textBoxAmount.Text, out double amount))
             {
-                String acc = GetSelection();
-                if (acc == "Omni")
+                try
                 {
-                    accOmni.Deposit(amount);
-                    lbInfo.Text = accOmni.LastTransaction;
+                    Account acc = GetSelection();
+                    AccCtrl.Deposit(acc, amount);
+                    lbInfo.Text = acc.LastTransaction;
                 }
-                else if (acc == "Investment")
-                {
-                    accInvestment.Deposit(amount);
-                    lbInfo.Text = accInvestment.LastTransaction;
-                }
-                else if (acc == "Everyday")
-                {
-                    accEveryday.Deposit(amount);
-                    lbInfo.Text = accEveryday.LastTransaction;
-                }
-                else lbInfo.Text = "No account selected";
 
             }
-            else lbInfo.Text = "Invalid input amount!";    
+            else lbInfo.Text = "Invlaid input amount!";
         }
 
         // Make withdrawal
@@ -69,32 +66,18 @@ namespace BIT706_A3_OliverBerry
         {
             if (double.TryParse(textBoxAmount.Text, out double amount))
             {
-                String acc = GetSelection();
+                Account acc = GetSelection();
                 try
                 {
-                    if (acc == "Omni")
-                    {
-                        accOmni.Withdraw(amount);
-                        lbInfo.Text = accOmni.LastTransaction;
-                    }
-                    else if (acc == "Investment")
-                    {
-                        accInvestment.Withdraw(amount);
-                        lbInfo.Text = accInvestment.LastTransaction;
-                    }
-                    else if (acc == "Everyday")
-                    {
-                        accEveryday.Withdraw(amount);
-                        lbInfo.Text = accEveryday.LastTransaction;
-                    }
-                    else lbInfo.Text = "No account selected";
+                    acc.Withdraw(amount);
+                    lbInfo.Text = acc.LastTransaction;
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
                 }
             }
-            else lbInfo.Text = "Invalid input amount!";
+            else lbInfo.Text = "Invlaid input amount!";
         }
 
         // Get account info
@@ -147,3 +130,7 @@ namespace BIT706_A3_OliverBerry
         }
     }
 }
+
+// i need to set the manage accounts form's selection as a list box like in manage customers. 
+// use same methods etc..
+//

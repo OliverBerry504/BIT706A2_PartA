@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
-    class Controller
+    class CustController
     {
         private readonly List<Customer> AllCustomers = new List<Customer>();
         private string errorMessage;
@@ -97,42 +97,6 @@ namespace BIT706_A3_OliverBerry
                 ErrorMessage = e.Message;
                 return false;
             }
-        }
-
-        public bool Transfer(Account accTo, Account accFrom, double amount)
-        {
-            try
-            {
-                accFrom.Withdraw(amount);
-            }
-            catch (Exception e)
-            {
-                ErrorMessage = e.Message;
-                return false;
-            }
-
-            accTo.Deposit(amount);
-            return true;
-        }
-
-        public bool CreateAccount(Customer c, string accType)
-        {
-            if (accType == "Everyday")
-            {
-                Everyday acc = new Everyday(c);
-                return true;
-            }
-            else if (accType == "Investment")
-            {
-                Investment acc = new Investment(c, 4);
-                return true;
-            }
-            else if (accType == "Omni")
-            {
-                Omni acc = new Omni(c, 5000);
-                return true;
-            }
-            else return false;
         }
     }
 }

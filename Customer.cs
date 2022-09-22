@@ -7,6 +7,8 @@ namespace BIT706_A3_OliverBerry
 {
     public class Customer
     {
+        private List<Account> accounts = new List<Account>();
+
         private static int nextID = 1;
         private int iD;
         private bool isStaff;
@@ -16,6 +18,7 @@ namespace BIT706_A3_OliverBerry
         public bool IsStaff { get => isStaff; set => isStaff = value; }
 
         public int ID { get => iD; set => iD = value; }
+        public List<Account> Accounts { get => accounts; set => accounts = value; }
 
         public Customer()
         {

@@ -37,6 +37,7 @@ namespace BIT706_A3_OliverBerry
             this.lstAllCst = new System.Windows.Forms.ListBox();
             this.btnMainMenu = new System.Windows.Forms.Button();
             this.lbCstDetails = new System.Windows.Forms.Label();
+            this.btn_mng_accs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -92,7 +93,7 @@ namespace BIT706_A3_OliverBerry
             this.lstAllCst.ItemHeight = 15;
             this.lstAllCst.Location = new System.Drawing.Point(214, 41);
             this.lstAllCst.Name = "lstAllCst";
-            this.lstAllCst.Size = new System.Drawing.Size(157, 154);
+            this.lstAllCst.Size = new System.Drawing.Size(157, 184);
             this.lstAllCst.TabIndex = 6;
             // 
             // btnMainMenu
@@ -114,11 +115,22 @@ namespace BIT706_A3_OliverBerry
             this.lbCstDetails.Size = new System.Drawing.Size(0, 15);
             this.lbCstDetails.TabIndex = 5;
             // 
+            // btn_mng_accs
+            // 
+            this.btn_mng_accs.Location = new System.Drawing.Point(46, 201);
+            this.btn_mng_accs.Name = "btn_mng_accs";
+            this.btn_mng_accs.Size = new System.Drawing.Size(151, 25);
+            this.btn_mng_accs.TabIndex = 8;
+            this.btn_mng_accs.Text = "Manage  Accounts";
+            this.btn_mng_accs.UseVisualStyleBackColor = true;
+            this.btn_mng_accs.Click += new System.EventHandler(this.Btn_mng_accs_Click);
+            // 
             // ManageCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 231);
+            this.ClientSize = new System.Drawing.Size(419, 248);
+            this.Controls.Add(this.btn_mng_accs);
             this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.lstAllCst);
             this.Controls.Add(this.lbCstDetails);
@@ -137,6 +149,7 @@ namespace BIT706_A3_OliverBerry
             this.Controls.SetChildIndex(this.lbCstDetails, 0);
             this.Controls.SetChildIndex(this.lstAllCst, 0);
             this.Controls.SetChildIndex(this.btnMainMenu, 0);
+            this.Controls.SetChildIndex(this.btn_mng_accs, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +165,6 @@ namespace BIT706_A3_OliverBerry
         private System.Windows.Forms.ListBox lstAllCst;
         private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.Label lbCstDetails;
+        private System.Windows.Forms.Button btn_mng_accs;
     }
 }

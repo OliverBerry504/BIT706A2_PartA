@@ -136,7 +136,6 @@ namespace BIT706_A3_OliverBerry
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.BtnDeposit);
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.BtnDeposit, 0);
             this.Controls.SetChildIndex(this.btnWithdraw, 0);
             this.Controls.SetChildIndex(this.selectAcc, 0);

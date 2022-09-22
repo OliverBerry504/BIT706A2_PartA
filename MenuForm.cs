@@ -23,14 +23,5 @@ namespace BIT706_A3_OliverBerry
             form.Tag = this;
             form.Location = this.Location;
         }
-
-        private void Btn_mng_accs_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            ManageAccountsForm form = new ManageAccountsForm();
-            form.Show();
-            form.Tag = this;
-            form.Location = this.Location;
-        }
     }
 }

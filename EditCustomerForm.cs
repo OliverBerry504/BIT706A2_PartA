@@ -31,7 +31,7 @@ namespace BIT706_A3_OliverBerry
                 // not completely necessary
                 MessageBox.Show("Customer name left empty");
             }
-            else if (Ctrl.EditCustomer(tbEdit.Text, Selected)) // success
+            else if (CustCtrl.EditCustomer(tbEdit.Text, Selected)) // success
             {
                 MessageBox.Show("Customer has been edited");
 
@@ -40,7 +40,7 @@ namespace BIT706_A3_OliverBerry
                 ManageCustomersForm manageForm = new ManageCustomersForm();
                 manageForm.Show();
             }
-            else MessageBox.Show(Ctrl.ErrorMessage); // error
+            else MessageBox.Show(CustCtrl.ErrorMessage); // error
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)

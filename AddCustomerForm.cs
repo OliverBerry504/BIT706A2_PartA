@@ -18,7 +18,7 @@ namespace BIT706_A3_OliverBerry
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (Ctrl.CreateCustomer(tbAdd.Text))
+            if (CustCtrl.CreateCustomer(tbAdd.Text))
             {
                 MessageBox.Show("Customer has been added");
 
@@ -29,7 +29,7 @@ namespace BIT706_A3_OliverBerry
             }
             else
             {
-                MessageBox.Show(Ctrl.ErrorMessage);
+                MessageBox.Show(CustCtrl.ErrorMessage);
             }
         }
 
