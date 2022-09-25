@@ -19,114 +19,151 @@ namespace BIT706_A3_OliverBerry
         public ManageAccountsForm()
         {
             InitializeComponent();
+        }
+
+        internal ManageAccountsForm(Customer c) : this()
+        {
+            Selected = c;
             DisplayAll();
         }
 
         // Display all customers
         private void DisplayAll()
         {
-            lstAllAcc.Items.Clear(); // create lstallacc
-            foreach (Customer c in CustCtrl.GetAllCustomers())
+            lst_all_accs.Items.Clear();
+            foreach (Account a in AccCtrl.GetCustomerAccounts(Selected))
             {
-                lstAllAcc.Items.Add(c);
+                lst_all_accs.Items.Add(a);
             }
             try
             {
-                lstAllAcc.SelectedIndex = 0;
+            lst_all_accs.SelectedIndex = 0;
             }
             catch (Exception)
             {
-                lbAccDetails.Text = "No customer data"; // also this
+                lb_info.Text = "No account data";
             }
-        }
-
-        internal ManageAccountsForm(Customer c) : this()
-        {
-            Selected = c;
         }
 
         // Make deposit
         private void BtnDeposit_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(textBoxAmount.Text, out double amount))
+            if (double.TryParse(tb_amount.Text, out double amount))
             {
                 try
                 {
                     Account acc = GetSelection();
                     AccCtrl.Deposit(acc, amount);
-                    lbInfo.Text = acc.LastTransaction;
+                    lb_info.Text = acc.LastTransaction;
+                }
+                catch (Exception error)
+                {
+                    // dosomething
                 }
 
             }
-            else lbInfo.Text = "Invlaid input amount!";
+            else lb_info.Text = "Invlaid input amount!";
         }
 
         // Make withdrawal
         private void BtnWithdraw_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(textBoxAmount.Text, out double amount))
+            if (double.TryParse(tb_amount.Text, out double amount))
             {
                 Account acc = GetSelection();
                 try
                 {
                     acc.Withdraw(amount);
-                    lbInfo.Text = acc.LastTransaction;
+                    lb_info.Text = acc.LastTransaction;
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
                 }
             }
-            else lbInfo.Text = "Invlaid input amount!";
+            else lb_info.Text = "Invlaid input amount!";
         }
 
         // Get account info
         private void BtnInfo_Click(object sender, EventArgs e)
         {
-            String acc = GetSelection();
-            if (acc == "Omni") 
+            try
             {
-                lbInfo.Text = accOmni.Info(); 
+                Account a = GetSelection();
+                lb_info.Text = a.Info();
             }
-            else if (acc == "Investment")
+            catch(Exception error) 
             {
-                lbInfo.Text = accInvestment.Info();
+                lb_info.Text = "No account selected"; // change maybe
             }
-            else if (acc == "Everyday")
-            {
-                lbInfo.Text = accEveryday.Info();
-            }
-            else lbInfo.Text = "No account selected";
         }
 
         // Add interest
         private void BtnAddInterest_Click(object sender, EventArgs e)
         {
-            String acc = GetSelection();
-
-            if (acc == "Omni")
-            {
-                accOmni.DepositInterest();
-                lbInfo.Text = accOmni.LastTransaction;
+            try
+            {   
+                Account a = GetSelection();
+                if (a.AccType == "Investment")
+                {
+                    Investment acc = (Investment)a;
+                    acc.DepositInterest();
+                    lb_info.Text = a.LastTransaction;
+                }
+                else if (a.AccType == "Omni")
+                {
+                    Omni acc = (Omni)a;
+                    acc.DepositInterest();
+                    lb_info.Text = a.LastTransaction;
+                }
+                else
+                {
+                    lb_info.Text = "Interest does not apply!";
+                }
             }
-            else if (acc == "Investment")
+            catch (Exception error)
             {
-                accInvestment.DepositInterest();
-                lbInfo.Text = accInvestment.LastTransaction;
+                // do something
             }
-            else lbInfo.Text = "Interest does not apply!";
         }
 
         // Return selected account type
-        private String GetSelection()
+        private Account GetSelection()
         {
-            if (selectAcc.SelectedIndex > -1)
+            if (lst_all_accs.SelectedIndex > -1)
             {
-                Account account = (Account)selectAcc.SelectedItem;
-                string acc = account.AccType;
-                return acc;
+                Account a = (Account)lst_all_accs.SelectedItem;
+                return a;
             }
             else return null;
+        }
+
+        private void Btn_return_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
+        }
+
+        private void Btn_create_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            SelectAccountForm form = new SelectAccountForm(Selected);
+            form.Show();
+        }
+
+        private void Btn_transfer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Account acc = GetSelection();
+                TransferForm form = new TransferForm(acc);
+                form.Show();
+            }
+            catch (Exception)
+            {
+                // do something
+            }
         }
     }
 }

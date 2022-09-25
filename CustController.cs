@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 
 namespace BIT706_A3_OliverBerry
-{
+{   
     class CustController
     {
-        private readonly List<Customer> AllCustomers = new List<Customer>();
+        private List<Customer> allCustomers = new List<Customer>();
         private string errorMessage;
 
         public string ErrorMessage { get => errorMessage; set => errorMessage = value; }
-
-        public List<Customer> GetAllCustomers()
-        {
-            return AllCustomers;
-        }
+        public List<Customer> AllCustomers { get => allCustomers; set => allCustomers = value; }
 
         // return customer object based on id number
         public Customer FindCustomerByID(int id)
@@ -97,6 +93,11 @@ namespace BIT706_A3_OliverBerry
                 ErrorMessage = e.Message;
                 return false;
             }
+        }
+
+        public int GetCustomerID(Customer c)
+        {
+            return c.ID;
         }
     }
 }

@@ -36,8 +36,8 @@ namespace BIT706_A3_OliverBerry
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ManageCustomersForm manageForm = new ManageCustomersForm();
-            manageForm.Show();
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
         }
     }
 }

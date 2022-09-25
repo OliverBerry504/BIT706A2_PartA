@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BIT706_A3_OliverBerry
-{
+{   
+    [Serializable]
     public class Investment : Account
     {
-        private readonly double rate;
+        private readonly double rate = 4.0;
         private readonly double fee = 10.00;
 
         public double Rate => rate;
         public double Fee => fee;
 
         // -------- Constructors -------
-        public Investment(Customer customer, double newRate) : base(customer)
+        public Investment(Customer customer) : base(customer)
         {
-            rate = newRate;
             AccType = "Investment";
         }
         // ---------- Methods ----------

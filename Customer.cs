@@ -5,11 +5,9 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
+    [Serializable]
     public class Customer
     {
-        private List<Account> accounts = new List<Account>();
-
-        private static int nextID = 1;
         private int iD;
         private bool isStaff;
         private string name;
@@ -18,12 +16,10 @@ namespace BIT706_A3_OliverBerry
         public bool IsStaff { get => isStaff; set => isStaff = value; }
 
         public int ID { get => iD; set => iD = value; }
-        public List<Account> Accounts { get => accounts; set => accounts = value; }
 
         public Customer()
         {
-            ID = nextID;
-            nextID++;
+            ID = CustIdData.NextId;
         }
 
         public Customer(string newName, bool newIsStaff) : this()

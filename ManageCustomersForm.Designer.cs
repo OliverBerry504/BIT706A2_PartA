@@ -29,95 +29,95 @@ namespace BIT706_A3_OliverBerry
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.tbFind = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.lstAllCst = new System.Windows.Forms.ListBox();
-            this.btnMainMenu = new System.Windows.Forms.Button();
-            this.lbCstDetails = new System.Windows.Forms.Label();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.tb_find = new System.Windows.Forms.TextBox();
+            this.btn_find = new System.Windows.Forms.Button();
+            this.lst_all_cust = new System.Windows.Forms.ListBox();
+            this.btn_main_menu = new System.Windows.Forms.Button();
+            this.lb_cust_details = new System.Windows.Forms.Label();
             this.btn_mng_accs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // btn_add
             // 
-            this.btnAdd.Location = new System.Drawing.Point(46, 139);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(151, 25);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "New Customer";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btn_add.Location = new System.Drawing.Point(46, 76);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(151, 25);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "New Customer";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // btnDelete
+            // btn_delete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(46, 76);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(151, 25);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete Selection";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.btn_delete.Location = new System.Drawing.Point(46, 139);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(151, 25);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "Delete Selection";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // btnEdit
+            // btn_edit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(46, 107);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(151, 26);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Edit Selection";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btn_edit.Location = new System.Drawing.Point(46, 107);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(151, 26);
+            this.btn_edit.TabIndex = 2;
+            this.btn_edit.Text = "Edit Selection";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // tbFind
+            // tb_find
             // 
-            this.tbFind.Location = new System.Drawing.Point(46, 41);
-            this.tbFind.Name = "tbFind";
-            this.tbFind.Size = new System.Drawing.Size(51, 23);
-            this.tbFind.TabIndex = 3;
+            this.tb_find.Location = new System.Drawing.Point(46, 41);
+            this.tb_find.Name = "tb_find";
+            this.tb_find.Size = new System.Drawing.Size(51, 23);
+            this.tb_find.TabIndex = 3;
             // 
-            // btnFind
+            // btn_find
             // 
-            this.btnFind.Location = new System.Drawing.Point(103, 39);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(94, 25);
-            this.btnFind.TabIndex = 4;
-            this.btnFind.Text = "Find by ID";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
+            this.btn_find.Location = new System.Drawing.Point(103, 39);
+            this.btn_find.Name = "btn_find";
+            this.btn_find.Size = new System.Drawing.Size(94, 25);
+            this.btn_find.TabIndex = 4;
+            this.btn_find.Text = "Find by ID";
+            this.btn_find.UseVisualStyleBackColor = true;
+            this.btn_find.Click += new System.EventHandler(this.BtnFind_Click);
             // 
-            // lstAllCst
+            // lst_all_cust
             // 
-            this.lstAllCst.FormattingEnabled = true;
-            this.lstAllCst.ItemHeight = 15;
-            this.lstAllCst.Location = new System.Drawing.Point(214, 41);
-            this.lstAllCst.Name = "lstAllCst";
-            this.lstAllCst.Size = new System.Drawing.Size(157, 184);
-            this.lstAllCst.TabIndex = 6;
+            this.lst_all_cust.FormattingEnabled = true;
+            this.lst_all_cust.ItemHeight = 15;
+            this.lst_all_cust.Location = new System.Drawing.Point(214, 41);
+            this.lst_all_cust.Name = "lst_all_cust";
+            this.lst_all_cust.Size = new System.Drawing.Size(157, 184);
+            this.lst_all_cust.TabIndex = 6;
             // 
-            // btnMainMenu
+            // btn_main_menu
             // 
-            this.btnMainMenu.Location = new System.Drawing.Point(46, 170);
-            this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(151, 25);
-            this.btnMainMenu.TabIndex = 7;
-            this.btnMainMenu.Text = "Main Menu";
-            this.btnMainMenu.UseVisualStyleBackColor = true;
-            this.btnMainMenu.Click += new System.EventHandler(this.BtnMainMenu_Click);
+            this.btn_main_menu.Location = new System.Drawing.Point(46, 201);
+            this.btn_main_menu.Name = "btn_main_menu";
+            this.btn_main_menu.Size = new System.Drawing.Size(151, 25);
+            this.btn_main_menu.TabIndex = 7;
+            this.btn_main_menu.Text = "Main Menu";
+            this.btn_main_menu.UseVisualStyleBackColor = true;
+            this.btn_main_menu.Click += new System.EventHandler(this.BtnMainMenu_Click);
             // 
-            // lbCstDetails
+            // lb_cust_details
             // 
-            this.lbCstDetails.AutoSize = true;
-            this.lbCstDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbCstDetails.Location = new System.Drawing.Point(268, 23);
-            this.lbCstDetails.Name = "lbCstDetails";
-            this.lbCstDetails.Size = new System.Drawing.Size(0, 15);
-            this.lbCstDetails.TabIndex = 5;
+            this.lb_cust_details.AutoSize = true;
+            this.lb_cust_details.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lb_cust_details.Location = new System.Drawing.Point(268, 23);
+            this.lb_cust_details.Name = "lb_cust_details";
+            this.lb_cust_details.Size = new System.Drawing.Size(0, 15);
+            this.lb_cust_details.TabIndex = 5;
             // 
             // btn_mng_accs
             // 
-            this.btn_mng_accs.Location = new System.Drawing.Point(46, 201);
+            this.btn_mng_accs.Location = new System.Drawing.Point(46, 170);
             this.btn_mng_accs.Name = "btn_mng_accs";
             this.btn_mng_accs.Size = new System.Drawing.Size(151, 25);
             this.btn_mng_accs.TabIndex = 8;
@@ -131,24 +131,24 @@ namespace BIT706_A3_OliverBerry
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 248);
             this.Controls.Add(this.btn_mng_accs);
-            this.Controls.Add(this.btnMainMenu);
-            this.Controls.Add(this.lstAllCst);
-            this.Controls.Add(this.lbCstDetails);
-            this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.tbFind);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btn_main_menu);
+            this.Controls.Add(this.lst_all_cust);
+            this.Controls.Add(this.lb_cust_details);
+            this.Controls.Add(this.btn_find);
+            this.Controls.Add(this.tb_find);
+            this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_add);
             this.Name = "ManageCustomersForm";
             this.Text = "Manage";
-            this.Controls.SetChildIndex(this.btnAdd, 0);
-            this.Controls.SetChildIndex(this.btnDelete, 0);
-            this.Controls.SetChildIndex(this.btnEdit, 0);
-            this.Controls.SetChildIndex(this.tbFind, 0);
-            this.Controls.SetChildIndex(this.btnFind, 0);
-            this.Controls.SetChildIndex(this.lbCstDetails, 0);
-            this.Controls.SetChildIndex(this.lstAllCst, 0);
-            this.Controls.SetChildIndex(this.btnMainMenu, 0);
+            this.Controls.SetChildIndex(this.btn_add, 0);
+            this.Controls.SetChildIndex(this.btn_delete, 0);
+            this.Controls.SetChildIndex(this.btn_edit, 0);
+            this.Controls.SetChildIndex(this.tb_find, 0);
+            this.Controls.SetChildIndex(this.btn_find, 0);
+            this.Controls.SetChildIndex(this.lb_cust_details, 0);
+            this.Controls.SetChildIndex(this.lst_all_cust, 0);
+            this.Controls.SetChildIndex(this.btn_main_menu, 0);
             this.Controls.SetChildIndex(this.btn_mng_accs, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,14 +157,14 @@ namespace BIT706_A3_OliverBerry
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.TextBox tbFind;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.ListBox lstAllCst;
-        private System.Windows.Forms.Button btnMainMenu;
-        private System.Windows.Forms.Label lbCstDetails;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.TextBox tb_find;
+        private System.Windows.Forms.Button btn_find;
+        private System.Windows.Forms.ListBox lst_all_cust;
+        private System.Windows.Forms.Button btn_main_menu;
+        private System.Windows.Forms.Label lb_cust_details;
         private System.Windows.Forms.Button btn_mng_accs;
     }
 }

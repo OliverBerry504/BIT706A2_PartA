@@ -15,18 +15,18 @@ namespace BIT706_A3_OliverBerry
         // Display all customers
         private void DisplayAll()
         {
-            lstAllCst.Items.Clear();
-            foreach (Customer c in CustCtrl.GetAllCustomers())
+            lst_all_cust.Items.Clear();
+            foreach (Customer c in CustCtrl.AllCustomers)
             {
-                lstAllCst.Items.Add(c);
+                lst_all_cust.Items.Add(c);
             }
             try
             {
-                lstAllCst.SelectedIndex = 0;
+                lst_all_cust.SelectedIndex = 0;
             }
             catch (Exception) 
             {
-                lbCstDetails.Text = "No customer data";
+                lb_cust_details.Text = "No customer data";
             }
         }
 
@@ -37,7 +37,7 @@ namespace BIT706_A3_OliverBerry
                 int input;
                 try
                 {
-                    input = Int32.Parse(tbFind.Text);
+                    input = Int32.Parse(tb_find.Text);
                 }
                 catch (FormatException)
                 {
@@ -72,7 +72,7 @@ namespace BIT706_A3_OliverBerry
         // Edit Button
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (lstAllCst.SelectedItem is null)  // repeated again for manage accounts form
+            if (lst_all_cust.SelectedItem is null)  // repeated again for manage accounts form
             {
                 MessageBox.Show("No available selection");
             }
@@ -80,12 +80,9 @@ namespace BIT706_A3_OliverBerry
             {
                 try
                 {
-                    Customer c = CustCtrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
-                    {
-                        this.Visible = false;
-                        EditCustomerForm editCustomerForm = new EditCustomerForm(c);
-                        editCustomerForm.Show();
-                    }
+                    this.Visible = false;
+                    EditCustomerForm editCustomerForm = new EditCustomerForm((Customer)lst_all_cust.SelectedItem);
+                    editCustomerForm.Show();
                 }
                 catch (Exception error)
                 {
@@ -97,7 +94,7 @@ namespace BIT706_A3_OliverBerry
         // Delete Button
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (CustCtrl.DeleteCustomer((Customer)lstAllCst.SelectedItem))
+            if (CustCtrl.DeleteCustomer((Customer)lst_all_cust.SelectedItem))
             {
                 MessageBox.Show("Customer has been deleted");
                 DisplayAll();
@@ -115,11 +112,11 @@ namespace BIT706_A3_OliverBerry
         // set new list box value
         private bool SetListBox(Customer c)
         {
-            for (int i = 0; i < (lstAllCst.Items.Count); i++)
+            for (int i = 0; i < (lst_all_cust.Items.Count); i++)
             {
-                if (c.ID == ((Customer)lstAllCst.Items[i]).ID)
+                if (CustCtrl.GetCustomerID(c) == CustCtrl.GetCustomerID(((Customer)lst_all_cust.Items[i])))
                 {
-                    lstAllCst.SelectedIndex = i;
+                    lst_all_cust.SelectedIndex = i;
                     return true;
                 }
             }
@@ -131,26 +128,25 @@ namespace BIT706_A3_OliverBerry
 
         private void Btn_mng_accs_Click(object sender, EventArgs e)
         {
-            if (lstAllCst.SelectedItem is null)
-            {
-                MessageBox.Show("No available selection");
-            }
-            else
-            {
                 try
                 {
-                    Customer c = CustCtrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
+                    Customer c = (Customer)lst_all_cust.SelectedItem;
+                    if (c != null)
                     {
                         this.Visible = false;
                         ManageAccountsForm form = new ManageAccountsForm(c);
                         form.Show();
+                    }
+                    else
+                    {
+                    MessageBox.Show("No available selection");
                     }
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
                 }
-            }
+
         }
     }
 }

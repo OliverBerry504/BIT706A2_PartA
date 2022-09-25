@@ -6,12 +6,25 @@ namespace BIT706_A3_OliverBerry
 {
     class AccController
     {
-        private readonly List<Account> custAccounts = new List<Account>();
+        private List<Account> allAccounts = new List<Account>();
         private string errorMessage;
 
         public string ErrorMessage { get => errorMessage; set => errorMessage = value; }
+        public List<Account> AllAccounts { get => allAccounts; set => allAccounts = value; }
 
-        public List<Account> AllAccounts => custAccounts;
+        public List<Account> GetCustomerAccounts(Customer c)
+        {
+            List<Account> accs = new List<Account>();
+
+            foreach (Account a in AllAccounts)
+            {
+                if (a.Customer.ID == c.ID)
+                {
+                    accs.Add(a);
+                }
+            }
+            return accs;
+        }
 
         public bool CreateAccEveryday(Customer c)
         {
@@ -22,12 +35,12 @@ namespace BIT706_A3_OliverBerry
             else
             {
                 Everyday acc = new Everyday(c);
-                custAccounts.Add(acc);
+                AllAccounts.Add(acc);
                 return true;
             }
         }
 
-        public bool CreateAccInvestment(Customer c, double rate)
+        public bool CreateAccInvestment(Customer c)
         {
             if (c == null)
             {
@@ -35,13 +48,13 @@ namespace BIT706_A3_OliverBerry
             }
             else
             {
-                Investment acc = new Investment(c, rate);
-                custAccounts.Add(acc);
+                Investment acc = new Investment(c);
+                AllAccounts.Add(acc);
                 return true;
             }
         }
 
-        public bool CreateAccOmni(Customer c, double overdraft)
+        public bool CreateAccOmni(Customer c)
         {
             if (c == null)
             {
@@ -49,8 +62,8 @@ namespace BIT706_A3_OliverBerry
             }
             else
             {
-                Omni acc = new Omni(c, overdraft);
-                custAccounts.Add(acc);
+                Omni acc = new Omni(c);
+                AllAccounts.Add(acc);
                 return true;
             }
         }

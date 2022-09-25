@@ -4,20 +4,20 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
+    [Serializable]
     public class Omni : Account
     {
         private readonly double rate = 4.0;
         private readonly double fee = 10.00;
-        private readonly double overdraft;
+        private readonly double overdraft = 5000.00;
 
         public double Rate => rate;
         public double Fee => fee;
         public double Overdraft => overdraft;
 
         // -------- Constructors -------
-        public Omni(Customer customer, double newOverdraft) : base(customer)
+        public Omni(Customer customer) : base(customer)
         {
-            overdraft = newOverdraft;
             AccType = "Omni";
         }
         // ---------- Methods ----------

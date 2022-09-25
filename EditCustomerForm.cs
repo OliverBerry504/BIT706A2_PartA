@@ -37,8 +37,8 @@ namespace BIT706_A3_OliverBerry
 
                 // return to 'Manage Customers' window
                 this.Visible = false;
-                ManageCustomersForm manageForm = new ManageCustomersForm();
-                manageForm.Show();
+                ManageCustomersForm form = new ManageCustomersForm();
+                form.Show();
             }
             else MessageBox.Show(CustCtrl.ErrorMessage); // error
         }
@@ -46,8 +46,8 @@ namespace BIT706_A3_OliverBerry
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ManageCustomersForm manageForm = new ManageCustomersForm();
-            manageForm.Show();
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
         }
     }
 }
