@@ -29,64 +29,64 @@ namespace BIT706_A3_OliverBerry
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbAdd = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lbInput = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
+            this.tb_add = new System.Windows.Forms.TextBox();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.lb_input = new System.Windows.Forms.Label();
+            this.btn_return = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tbAdd
+            // tb_add
             // 
-            this.tbAdd.Location = new System.Drawing.Point(111, 39);
-            this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(148, 23);
-            this.tbAdd.TabIndex = 1;
+            this.tb_add.Location = new System.Drawing.Point(111, 39);
+            this.tb_add.Name = "tb_add";
+            this.tb_add.Size = new System.Drawing.Size(148, 23);
+            this.tb_add.TabIndex = 1;
             // 
-            // btnAdd
+            // btn_add
             // 
-            this.btnAdd.Location = new System.Drawing.Point(144, 77);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 23);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Submit";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btn_add.Location = new System.Drawing.Point(144, 77);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(115, 23);
+            this.btn_add.TabIndex = 2;
+            this.btn_add.Text = "Submit";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.Btn_add_Click);
             // 
-            // lbInput
+            // lb_input
             // 
-            this.lbInput.AutoSize = true;
-            this.lbInput.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbInput.Location = new System.Drawing.Point(21, 42);
-            this.lbInput.Name = "lbInput";
-            this.lbInput.Size = new System.Drawing.Size(84, 15);
-            this.lbInput.TabIndex = 3;
-            this.lbInput.Text = "Add Customer";
+            this.lb_input.AutoSize = true;
+            this.lb_input.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lb_input.Location = new System.Drawing.Point(21, 42);
+            this.lb_input.Name = "lb_input";
+            this.lb_input.Size = new System.Drawing.Size(84, 15);
+            this.lb_input.TabIndex = 3;
+            this.lb_input.Text = "Add Customer";
             // 
-            // btnReturn
+            // btn_return
             // 
-            this.btnReturn.Location = new System.Drawing.Point(21, 77);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(117, 23);
-            this.btnReturn.TabIndex = 4;
-            this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.BtnCancel_Click);
+            this.btn_return.Location = new System.Drawing.Point(21, 77);
+            this.btn_return.Name = "btn_return";
+            this.btn_return.Size = new System.Drawing.Size(117, 23);
+            this.btn_return.TabIndex = 4;
+            this.btn_return.Text = "Return";
+            this.btn_return.UseVisualStyleBackColor = true;
+            this.btn_return.Click += new System.EventHandler(this.Btn_cancel_Click);
             // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(288, 136);
-            this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.lbInput);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbAdd);
+            this.Controls.Add(this.btn_return);
+            this.Controls.Add(this.lb_input);
+            this.Controls.Add(this.btn_add);
+            this.Controls.Add(this.tb_add);
             this.Name = "AddCustomerForm";
             this.Text = "AddCustomerForm";
-            this.Controls.SetChildIndex(this.tbAdd, 0);
-            this.Controls.SetChildIndex(this.btnAdd, 0);
-            this.Controls.SetChildIndex(this.lbInput, 0);
-            this.Controls.SetChildIndex(this.btnReturn, 0);
+            this.Controls.SetChildIndex(this.tb_add, 0);
+            this.Controls.SetChildIndex(this.btn_add, 0);
+            this.Controls.SetChildIndex(this.lb_input, 0);
+            this.Controls.SetChildIndex(this.btn_return, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,9 +94,9 @@ namespace BIT706_A3_OliverBerry
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbAdd;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lbInput;
-        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.TextBox tb_add;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Label lb_input;
+        private System.Windows.Forms.Button btn_return;
     }
 }

@@ -29,123 +29,186 @@ namespace BIT706_A3_OliverBerry
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnDeposit = new System.Windows.Forms.Button();
-            this.btnWithdraw = new System.Windows.Forms.Button();
-            this.selectAcc = new System.Windows.Forms.ComboBox();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btn_deposit = new System.Windows.Forms.Button();
+            this.btn_withdraw = new System.Windows.Forms.Button();
+            this.tb_amount = new System.Windows.Forms.TextBox();
+            this.lb_amount_nzd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbInfo = new System.Windows.Forms.Label();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.btnAddInterest = new System.Windows.Forms.Button();
+            this.lb_info = new System.Windows.Forms.Label();
+            this.btn_info = new System.Windows.Forms.Button();
+            this.btn_add_Interest = new System.Windows.Forms.Button();
+            this.lst_all_accs = new System.Windows.Forms.ListBox();
+            this.btn_return = new System.Windows.Forms.Button();
+            this.btn_create = new System.Windows.Forms.Button();
+            this.btn_transfer = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtnDeposit
+            // btn_deposit
             // 
-            this.BtnDeposit.Location = new System.Drawing.Point(35, 142);
-            this.BtnDeposit.Name = "BtnDeposit";
-            this.BtnDeposit.Size = new System.Drawing.Size(107, 23);
-            this.BtnDeposit.TabIndex = 0;
-            this.BtnDeposit.Text = "Deposit";
-            this.BtnDeposit.UseVisualStyleBackColor = true;
-            this.BtnDeposit.Click += new System.EventHandler(this.BtnDeposit_Click);
+            this.btn_deposit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_deposit.Location = new System.Drawing.Point(24, 195);
+            this.btn_deposit.Name = "btn_deposit";
+            this.btn_deposit.Size = new System.Drawing.Size(157, 23);
+            this.btn_deposit.TabIndex = 0;
+            this.btn_deposit.Text = "Deposit";
+            this.btn_deposit.UseVisualStyleBackColor = true;
+            this.btn_deposit.Click += new System.EventHandler(this.Btn_deposit_Click);
             // 
-            // btnWithdraw
+            // btn_withdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(148, 142);
-            this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(104, 23);
-            this.btnWithdraw.TabIndex = 4;
-            this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
-            this.btnWithdraw.Click += new System.EventHandler(this.BtnWithdraw_Click);
+            this.btn_withdraw.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_withdraw.Location = new System.Drawing.Point(24, 224);
+            this.btn_withdraw.Name = "btn_withdraw";
+            this.btn_withdraw.Size = new System.Drawing.Size(157, 23);
+            this.btn_withdraw.TabIndex = 4;
+            this.btn_withdraw.Text = "Withdraw";
+            this.btn_withdraw.UseVisualStyleBackColor = true;
+            this.btn_withdraw.Click += new System.EventHandler(this.Btn_withdraw_Click);
             // 
-            // selectAcc
+            // tb_amount
             // 
-            this.selectAcc.FormattingEnabled = true;
-            this.selectAcc.Location = new System.Drawing.Point(131, 56);
-            this.selectAcc.Name = "selectAcc";
-            this.selectAcc.Size = new System.Drawing.Size(121, 23);
-            this.selectAcc.TabIndex = 5;
+            this.tb_amount.Location = new System.Drawing.Point(106, 137);
+            this.tb_amount.Name = "tb_amount";
+            this.tb_amount.Size = new System.Drawing.Size(75, 23);
+            this.tb_amount.TabIndex = 7;
             // 
-            // textBoxAmount
+            // lb_amount_nzd
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(131, 100);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(121, 23);
-            this.textBoxAmount.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Amount NZD";
+            this.lb_amount_nzd.AutoSize = true;
+            this.lb_amount_nzd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lb_amount_nzd.Location = new System.Drawing.Point(25, 142);
+            this.lb_amount_nzd.Name = "lb_amount_nzd";
+            this.lb_amount_nzd.Size = new System.Drawing.Size(78, 15);
+            this.lb_amount_nzd.TabIndex = 6;
+            this.lb_amount_nzd.Text = "Amount NZD";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 59);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(25, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Select account";
             // 
-            // lbInfo
+            // lb_info
             // 
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Location = new System.Drawing.Point(35, 204);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(0, 15);
-            this.lbInfo.TabIndex = 8;
+            this.lb_info.AutoSize = true;
+            this.lb_info.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lb_info.Location = new System.Drawing.Point(3, 5);
+            this.lb_info.Name = "lb_info";
+            this.lb_info.Size = new System.Drawing.Size(0, 15);
+            this.lb_info.TabIndex = 8;
             // 
-            // btnInfo
+            // btn_info
             // 
-            this.btnInfo.Location = new System.Drawing.Point(35, 171);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(107, 23);
-            this.btnInfo.TabIndex = 9;
-            this.btnInfo.Text = "Info";
-            this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
+            this.btn_info.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_info.Location = new System.Drawing.Point(190, 108);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(165, 23);
+            this.btn_info.TabIndex = 9;
+            this.btn_info.Text = "Account Info";
+            this.btn_info.UseVisualStyleBackColor = true;
+            this.btn_info.Click += new System.EventHandler(this.Btn_info_Click);
             // 
-            // btnAddInterest
+            // btn_add_Interest
             // 
-            this.btnAddInterest.Location = new System.Drawing.Point(149, 171);
-            this.btnAddInterest.Name = "btnAddInterest";
-            this.btnAddInterest.Size = new System.Drawing.Size(103, 23);
-            this.btnAddInterest.TabIndex = 10;
-            this.btnAddInterest.Text = "Add Interest";
-            this.btnAddInterest.UseVisualStyleBackColor = true;
-            this.btnAddInterest.Click += new System.EventHandler(this.BtnAddInterest_Click);
+            this.btn_add_Interest.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_add_Interest.Location = new System.Drawing.Point(190, 79);
+            this.btn_add_Interest.Name = "btn_add_Interest";
+            this.btn_add_Interest.Size = new System.Drawing.Size(165, 23);
+            this.btn_add_Interest.TabIndex = 10;
+            this.btn_add_Interest.Text = "Add Interest";
+            this.btn_add_Interest.UseVisualStyleBackColor = true;
+            this.btn_add_Interest.Click += new System.EventHandler(this.Btn_add_interest_Click);
             // 
-            // Form1
+            // lst_all_accs
+            // 
+            this.lst_all_accs.FormattingEnabled = true;
+            this.lst_all_accs.ItemHeight = 15;
+            this.lst_all_accs.Location = new System.Drawing.Point(24, 52);
+            this.lst_all_accs.Name = "lst_all_accs";
+            this.lst_all_accs.Size = new System.Drawing.Size(157, 79);
+            this.lst_all_accs.TabIndex = 11;
+            // 
+            // btn_return
+            // 
+            this.btn_return.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btn_return.Location = new System.Drawing.Point(24, 253);
+            this.btn_return.Name = "btn_return";
+            this.btn_return.Size = new System.Drawing.Size(157, 23);
+            this.btn_return.TabIndex = 12;
+            this.btn_return.Text = "Return";
+            this.btn_return.UseVisualStyleBackColor = true;
+            this.btn_return.Click += new System.EventHandler(this.Btn_return_Click);
+            // 
+            // btn_create
+            // 
+            this.btn_create.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_create.Location = new System.Drawing.Point(24, 166);
+            this.btn_create.Name = "btn_create";
+            this.btn_create.Size = new System.Drawing.Size(157, 23);
+            this.btn_create.TabIndex = 14;
+            this.btn_create.Text = "Create Account";
+            this.btn_create.UseVisualStyleBackColor = true;
+            this.btn_create.Click += new System.EventHandler(this.Btn_create_Click);
+            // 
+            // btn_transfer
+            // 
+            this.btn_transfer.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_transfer.Location = new System.Drawing.Point(190, 52);
+            this.btn_transfer.Name = "btn_transfer";
+            this.btn_transfer.Size = new System.Drawing.Size(165, 23);
+            this.btn_transfer.TabIndex = 16;
+            this.btn_transfer.Text = "Transfer";
+            this.btn_transfer.UseVisualStyleBackColor = true;
+            this.btn_transfer.Click += new System.EventHandler(this.Btn_transfer_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.lb_info);
+            this.panel1.Location = new System.Drawing.Point(190, 137);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(165, 136);
+            this.panel1.TabIndex = 17;
+            // 
+            // ManageAccountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 247);
-            this.Controls.Add(this.btnAddInterest);
-            this.Controls.Add(this.btnInfo);
-            this.Controls.Add(this.lbInfo);
-            this.Controls.Add(this.textBoxAmount);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(376, 290);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btn_transfer);
+            this.Controls.Add(this.btn_create);
+            this.Controls.Add(this.btn_return);
+            this.Controls.Add(this.lst_all_accs);
+            this.Controls.Add(this.btn_add_Interest);
+            this.Controls.Add(this.btn_info);
+            this.Controls.Add(this.tb_amount);
+            this.Controls.Add(this.lb_amount_nzd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.selectAcc);
-            this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.BtnDeposit);
-            this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Controls.SetChildIndex(this.BtnDeposit, 0);
-            this.Controls.SetChildIndex(this.btnWithdraw, 0);
-            this.Controls.SetChildIndex(this.selectAcc, 0);
+            this.Controls.Add(this.btn_withdraw);
+            this.Controls.Add(this.btn_deposit);
+            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.Name = "ManageAccountsForm";
+            this.Controls.SetChildIndex(this.btn_deposit, 0);
+            this.Controls.SetChildIndex(this.btn_withdraw, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textBoxAmount, 0);
-            this.Controls.SetChildIndex(this.lbInfo, 0);
-            this.Controls.SetChildIndex(this.btnInfo, 0);
-            this.Controls.SetChildIndex(this.btnAddInterest, 0);
+            this.Controls.SetChildIndex(this.lb_amount_nzd, 0);
+            this.Controls.SetChildIndex(this.tb_amount, 0);
+            this.Controls.SetChildIndex(this.btn_info, 0);
+            this.Controls.SetChildIndex(this.btn_add_Interest, 0);
+            this.Controls.SetChildIndex(this.lst_all_accs, 0);
+            this.Controls.SetChildIndex(this.btn_return, 0);
+            this.Controls.SetChildIndex(this.btn_create, 0);
+            this.Controls.SetChildIndex(this.btn_transfer, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,15 +216,19 @@ namespace BIT706_A3_OliverBerry
 
         #endregion
 
-        private System.Windows.Forms.Button BtnDeposit;
-        private System.Windows.Forms.Button btnWithdraw;
-        private System.Windows.Forms.ComboBox selectAcc;
-        private System.Windows.Forms.TextBox textBoxAmount;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_deposit;
+        private System.Windows.Forms.Button btn_withdraw;
+        private System.Windows.Forms.TextBox tb_amount;
+        private System.Windows.Forms.Label lb_amount_nzd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbInfo;
-        private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Button btnAddInterest;
+        private System.Windows.Forms.Label lb_info;
+        private System.Windows.Forms.Button btn_info;
+        private System.Windows.Forms.Button btn_add_Interest;
+        private System.Windows.Forms.ListBox lst_all_accs;
+        private System.Windows.Forms.Button btn_return;
+        private System.Windows.Forms.Button btn_create;
+        private System.Windows.Forms.Button btn_transfer;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

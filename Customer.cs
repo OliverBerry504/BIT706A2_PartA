@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
+    [Serializable]
     public class Customer
     {
-        private static int nextID = 1;
         private int iD;
         private bool isStaff;
         private string name;
@@ -19,8 +19,7 @@ namespace BIT706_A3_OliverBerry
 
         public Customer()
         {
-            ID = nextID;
-            nextID++;
+            ID = CustIdData.NextId;
         }
 
         public Customer(string newName, bool newIsStaff) : this()
@@ -30,12 +29,17 @@ namespace BIT706_A3_OliverBerry
         }
 
         // checks if name given is valid
-        public void ValidateCustomerName(string name)
-        {
-                if (!name.Any(x => char.IsLetter(x)))
-                {
-                    throw new Exception("Invalid customer name");
-                }
+        public static bool ValidateCustomerName(string name)
+        {       
+            if (name == null)
+            {
+                return false;
+            }
+            if (!name.Any(x => char.IsLetter(x)))
+            {
+                return false;
+            }
+            else return true;
         }
 
         public double Discount(double fee)

@@ -12,138 +12,153 @@ namespace BIT706_A3_OliverBerry
 {
     public partial class ManageAccountsForm : ParentForm
     {
-        Everyday accEveryday;
-        Investment accInvestment;
-        Omni accOmni;
+        private Customer selected;
+
+        internal Customer Selected { get => selected; set => selected = value; }
 
         public ManageAccountsForm()
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        internal ManageAccountsForm(Customer c) : this()
         {
-            // Create customer
-            Customer customer = new Customer("Oliver", true);
-            // Set combobox selections (accounts)
-
-            // Create accounts for above customer
-            accEveryday = new Everyday(customer);
-            accInvestment = new Investment(customer, 6);
-            accOmni = new Omni(customer, 5000);
-
-            // Set the selection types
-            selectAcc.Items.Add(accEveryday);
-            selectAcc.Items.Add(accInvestment);
-            selectAcc.Items.Add(accOmni);
+            Selected = c;
+            DisplayAll();
         }
 
-        // Make deposit
-        private void BtnDeposit_Click(object sender, EventArgs e)
+        // Display all customers
+        private void DisplayAll()
         {
-            if (double.TryParse(textBoxAmount.Text, out double amount))
+            lst_all_accs.Items.Clear();
+            foreach (Account a in AccCtrl.GetCustomerAccounts(Selected))
             {
-                String acc = GetSelection();
-                if (acc == "Omni")
-                {
-                    accOmni.Deposit(amount);
-                    lbInfo.Text = accOmni.LastTransaction;
-                }
-                else if (acc == "Investment")
-                {
-                    accInvestment.Deposit(amount);
-                    lbInfo.Text = accInvestment.LastTransaction;
-                }
-                else if (acc == "Everyday")
-                {
-                    accEveryday.Deposit(amount);
-                    lbInfo.Text = accEveryday.LastTransaction;
-                }
-                else lbInfo.Text = "No account selected";
-
+                lst_all_accs.Items.Add(a);
             }
-            else lbInfo.Text = "Invalid input amount!";    
+            try
+            {
+            lst_all_accs.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                lb_info.Text = "No account data";
+            }
         }
 
-        // Make withdrawal
-        private void BtnWithdraw_Click(object sender, EventArgs e)
+        private Account GetSelection()
         {
-            if (double.TryParse(textBoxAmount.Text, out double amount))
+            if (lst_all_accs.SelectedIndex > -1)
             {
-                String acc = GetSelection();
+                Account a = (Account)lst_all_accs.SelectedItem;
+                return a;
+            }
+            else return null;
+        }
+
+        private void Btn_deposit_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(tb_amount.Text, out double amount))
+            {
                 try
                 {
-                    if (acc == "Omni")
-                    {
-                        accOmni.Withdraw(amount);
-                        lbInfo.Text = accOmni.LastTransaction;
-                    }
-                    else if (acc == "Investment")
-                    {
-                        accInvestment.Withdraw(amount);
-                        lbInfo.Text = accInvestment.LastTransaction;
-                    }
-                    else if (acc == "Everyday")
-                    {
-                        accEveryday.Withdraw(amount);
-                        lbInfo.Text = accEveryday.LastTransaction;
-                    }
-                    else lbInfo.Text = "No account selected";
+                    Account acc = GetSelection();
+                    AccCtrl.Deposit(acc, amount);
+                    lb_info.Text = acc.LastTransaction;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+
+            }
+            else lb_info.Text = "Invalid input amount!";
+        }
+
+        private void Btn_withdraw_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(tb_amount.Text, out double amount))
+            {
+                Account acc = GetSelection();
+                try
+                {
+                    acc.Withdraw(amount);
+                    lb_info.Text = acc.LastTransaction;
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message);
                 }
             }
-            else lbInfo.Text = "Invalid input amount!";
+            else lb_info.Text = "Invalid input amount!";
         }
 
-        // Get account info
-        private void BtnInfo_Click(object sender, EventArgs e)
+        private void Btn_info_Click(object sender, EventArgs e)
         {
-            String acc = GetSelection();
-            if (acc == "Omni") 
+            try
             {
-                lbInfo.Text = accOmni.Info(); 
+                Account a = GetSelection();
+                lb_info.Text = a.Info();
             }
-            else if (acc == "Investment")
+            catch(Exception) 
             {
-                lbInfo.Text = accInvestment.Info();
+                lb_info.Text = "No account selected";
             }
-            else if (acc == "Everyday")
-            {
-                lbInfo.Text = accEveryday.Info();
-            }
-            else lbInfo.Text = "No account selected";
         }
 
-        // Add interest
-        private void BtnAddInterest_Click(object sender, EventArgs e)
+        private void Btn_add_interest_Click(object sender, EventArgs e)
         {
-            String acc = GetSelection();
-
-            if (acc == "Omni")
-            {
-                accOmni.DepositInterest();
-                lbInfo.Text = accOmni.LastTransaction;
+            try
+            {   
+                Account a = GetSelection();
+                if (a.AccType == "Investment")
+                {
+                    Investment acc = (Investment)a;
+                    acc.DepositInterest();
+                    lb_info.Text = a.LastTransaction;
+                }
+                else if (a.AccType == "Omni")
+                {
+                    Omni acc = (Omni)a;
+                    acc.DepositInterest();
+                    lb_info.Text = a.LastTransaction;
+                }
+                else
+                {
+                    lb_info.Text = "Interest does not apply!";
+                }
             }
-            else if (acc == "Investment")
+            catch (Exception)
             {
-                accInvestment.DepositInterest();
-                lbInfo.Text = accInvestment.LastTransaction;
+                lb_info.Text = "No account selected";
             }
-            else lbInfo.Text = "Interest does not apply!";
         }
 
-        // Return selected account type
-        private String GetSelection()
+        private void Btn_return_Click(object sender, EventArgs e)
         {
-            if (selectAcc.SelectedIndex > -1)
+            this.Visible = false;
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
+        }
+
+        private void Btn_create_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            SelectAccountForm form = new SelectAccountForm(Selected);
+            form.Show();
+        }
+
+        private void Btn_transfer_Click(object sender, EventArgs e)
+        {
+            try
             {
-                Account account = (Account)selectAcc.SelectedItem;
-                string acc = account.AccType;
-                return acc;
+                Account acc = GetSelection();
+                TransferForm form = new TransferForm(Selected, acc);
+                form.Show();
             }
-            else return null;
+            catch (Exception)
+            {
+                MessageBox.Show("No selection");
+            }
         }
     }
 }

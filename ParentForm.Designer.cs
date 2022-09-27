@@ -43,14 +43,14 @@ namespace BIT706_A3_OliverBerry
             this.label1.TabIndex = 0;
             this.label1.Text = "BIT706";
             // 
-            // Form1
+            // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(239, 209);
+            this.ClientSize = new System.Drawing.Size(240, 209);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "ParentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);

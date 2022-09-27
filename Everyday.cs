@@ -4,13 +4,21 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
+    [Serializable]
     public class Everyday : Account
-    {   
+    {
+        private readonly double rate = 4.0;
+        private readonly double fee = 10.00;
+
+        public double Rate => rate;
+        public double Fee => fee;
+
         // -------- Constructors -------
         public Everyday(Customer customer) : base(customer)
         {
             AccType = "Everyday";
         }
+
         // ---------- Methods ----------
         // Display account info
         public override string Info()

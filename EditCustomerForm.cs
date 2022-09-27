@@ -24,30 +24,29 @@ namespace BIT706_A3_OliverBerry
             Selected = c;
         }
 
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private void Btn_edit_Click(object sender, EventArgs e)
         {
-            if (tbEdit.Text is null) 
+            try
             {
-                // not completely necessary
-                MessageBox.Show("Customer name left empty");
-            }
-            else if (Ctrl.EditCustomer(tbEdit.Text, Selected)) // success
-            {
+                CustCtrl.EditCustomer(tb_edit.Text, Selected);
                 MessageBox.Show("Customer has been edited");
 
                 // return to 'Manage Customers' window
                 this.Visible = false;
-                ManageCustomersForm manageForm = new ManageCustomersForm();
-                manageForm.Show();
+                ManageCustomersForm form = new ManageCustomersForm();
+                form.Show();
             }
-            else MessageBox.Show(Ctrl.ErrorMessage); // error
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
+        private void Btn_return_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ManageCustomersForm manageForm = new ManageCustomersForm();
-            manageForm.Show();
+            ManageCustomersForm form = new ManageCustomersForm();
+            form.Show();
         }
     }
 }

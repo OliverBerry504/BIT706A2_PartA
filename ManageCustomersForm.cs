@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace BIT706_A3_OliverBerry
@@ -15,29 +17,41 @@ namespace BIT706_A3_OliverBerry
         // Display all customers
         private void DisplayAll()
         {
-            lstAllCst.Items.Clear();
-            foreach (Customer c in Ctrl.GetAllCustomers())
+            lst_all_cust.Items.Clear();
+            foreach (Customer c in CustCtrl.AllCustomers)
             {
-                lstAllCst.Items.Add(c);
+                lst_all_cust.Items.Add(c);
             }
             try
             {
-                lstAllCst.SelectedIndex = 0;
+                lst_all_cust.SelectedIndex = 0;
             }
             catch (Exception) 
             {
-                lbCstDetails.Text = "No customer data";
+                lb_cust_details.Text = "No customer data";
             }
         }
 
-        // Find Button
-        private void BtnFind_Click(object sender, EventArgs e)
+        private bool SetListBox(Customer c)
+        {
+            for (int i = 0; i < (lst_all_cust.Items.Count); i++)
+            {
+                if (CustCtrl.GetCustomerID(c) == CustCtrl.GetCustomerID(((Customer)lst_all_cust.Items[i])))
+                {
+                    lst_all_cust.SelectedIndex = i;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void Btn_find_Click(object sender, EventArgs e)
         { 
             {
                 int input;
                 try
                 {
-                    input = Int32.Parse(tbFind.Text);
+                    input = Int32.Parse(tb_find.Text);
                 }
                 catch (FormatException)
                 {
@@ -49,7 +63,7 @@ namespace BIT706_A3_OliverBerry
                 {
                     try
                     {
-                        Customer c = Ctrl.FindCustomerByID(input);
+                        Customer c = CustCtrl.FindCustomerByID(input);
                         SetListBox(c);
                     }
                     catch (Exception error)
@@ -61,18 +75,16 @@ namespace BIT706_A3_OliverBerry
             }
         }
 
-        // Add Button
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void Btn_add_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             AddCustomerForm addCustomerForm = new AddCustomerForm();
             addCustomerForm.Show();
         }
 
-        // Edit Button
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private void Btn_edit_Click(object sender, EventArgs e)
         {
-            if (lstAllCst.SelectedItem is null)
+            if (lst_all_cust.SelectedItem is null)
             {
                 MessageBox.Show("No available selection");
             }
@@ -80,12 +92,9 @@ namespace BIT706_A3_OliverBerry
             {
                 try
                 {
-                    Customer c = Ctrl.FindCustomerByID(((Customer)lstAllCst.SelectedItem).ID);
-                    {
-                        this.Visible = false;
-                        EditCustomerForm editCustomerForm = new EditCustomerForm(c);
-                        editCustomerForm.Show();
-                    }
+                    this.Visible = false;
+                    EditCustomerForm editCustomerForm = new EditCustomerForm((Customer)lst_all_cust.SelectedItem);
+                    editCustomerForm.Show();
                 }
                 catch (Exception error)
                 {
@@ -94,39 +103,68 @@ namespace BIT706_A3_OliverBerry
             }
         }
 
-        // Delete Button
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void Btn_delete_Click(object sender, EventArgs e)
         {
-            if (Ctrl.DeleteCustomer((Customer)lstAllCst.SelectedItem))
+            try
             {
+                CustCtrl.DeleteCustomer((Customer)lst_all_cust.SelectedItem);
                 MessageBox.Show("Customer has been deleted");
                 DisplayAll();
             }
-            else MessageBox.Show("No available selection");
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
-        private void BtnMainMenu_Click(object sender, EventArgs e)
+        private void Btn_mng_accs_Click(object sender, EventArgs e)
         {
+                try
+                {
+                    Customer c = (Customer)lst_all_cust.SelectedItem;
+                    if (c != null)
+                    {
+                        this.Visible = false;
+                        ManageAccountsForm form = new ManageAccountsForm(c);
+                        form.Show();
+                    }
+                    else
+                    {
+                    MessageBox.Show("No available selection");
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+        }
+
+        private void Btn_main_menu_Click(object sender, EventArgs e)
+        {
+            WriteData();
             this.Visible = false;
             MenuForm menuForm = new MenuForm();
             menuForm.Show();
         }
 
-        // set new list box value
-        private bool SetListBox(Customer c)
+        public void WriteData()
         {
-            for (int i = 0; i < (lstAllCst.Items.Count); i++)
-            {
-                if (c.ID == ((Customer)lstAllCst.Items[i]).ID)
-                {
-                    lstAllCst.SelectedIndex = i;
-                    return true;
-                }
-            }
-            // else something went wrong
-            using StreamWriter w = File.AppendText("log.txt");
-            w.WriteLine("Cannot set list box selection");
-            return false;
+            //create a formatting object
+            IFormatter formatter = new BinaryFormatter();
+
+            //Create a new IO stream to write to the file Objects.bin
+            Stream stream = new FileStream("objects.bin", FileMode.Create,
+            FileAccess.Write, FileShare.None);
+
+            //use the formatter to serialize the collection and send it to the filestream
+            formatter.Serialize(stream, AccCtrl.AllAccounts);
+            formatter.Serialize(stream, CustCtrl.AllCustomers);
+            formatter.Serialize(stream, CustIdData.GetInstance());
+            formatter.Serialize(stream, AccIdData.GetInstance());
+
+
+            //close the file
+            stream.Close();
         }
     }
 }

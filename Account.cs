@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
+    [Serializable]
     public abstract class Account
     {   // In this application 'Everyday', 'Investment', and 'Omni' will be subject to the same ID system
         // (i.e, cannot have both Omni ID of 1 and Investment ID of 1)
-        private static int nextID = 1;
         private int accountId;
         private Customer customer;
         private string accType;
@@ -24,12 +24,12 @@ namespace BIT706_A3_OliverBerry
         // ------------- Constructors ---------------
         public Account()
         {
-            AccountId = nextID;
-            nextID++;
+            accountId = AccIdData.NextId;
 
             Balance = 0.00;
             LastTransaction = "No previous transcations!";
         }
+
         public Account(Customer newCustomer) : this()
         {
             Customer = newCustomer;
@@ -44,7 +44,7 @@ namespace BIT706_A3_OliverBerry
         {
             Balance += amountIn;
         }
-        // Transaction (Withdrawl)
+        // Transaction (Withdrawal)
         public virtual void Withdraw(double amountOut)
         {
             Balance -= amountOut;
@@ -82,7 +82,7 @@ namespace BIT706_A3_OliverBerry
         // To display correct string data in combobox
         public override string ToString()
         {
-            return AccType;
+            return "ID: " + AccountId + "; " + AccType;
         }
     }
 }
