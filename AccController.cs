@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BIT706_A3_OliverBerry
 {
-    class AccController
+    public class AccController
     {
         private List<Account> allAccounts = new List<Account>();
 
@@ -91,6 +91,7 @@ namespace BIT706_A3_OliverBerry
             {
                 throw new Exception("Invalid transaction!");
             }
+
         }
     }
 }

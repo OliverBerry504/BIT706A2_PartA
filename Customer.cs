@@ -19,9 +19,10 @@ namespace BIT706_A3_OliverBerry
 
         public Customer()
         {
-            ID = CustIdData.NextId;
+            //ID = CustIdData.NextId;
+            ID = 1;
         }
-
+        
         public Customer(string newName, bool newIsStaff) : this()
         {
             name = newName;

@@ -8,7 +8,7 @@ namespace BIT706_A3_OliverBerry
     public abstract class Account
     {   // In this application 'Everyday', 'Investment', and 'Omni' will be subject to the same ID system
         // (i.e, cannot have both Omni ID of 1 and Investment ID of 1)
-        private int accountId;
+        private int accountId = 1;
         private Customer customer;
         private string accType;
         private double balance;
@@ -24,7 +24,8 @@ namespace BIT706_A3_OliverBerry
         // ------------- Constructors ---------------
         public Account()
         {
-            accountId = AccIdData.NextId;
+            //accountId = AccIdData.NextId;
+            accountId++;
 
             Balance = 0.00;
             LastTransaction = "No previous transcations!";
