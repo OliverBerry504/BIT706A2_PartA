@@ -11,22 +11,24 @@ namespace BIT706_A3_OliverBerry
     public partial class TransferForm : ParentForm
     {
         private readonly Account accFrom;
+        private readonly Customer customer;
 
         public TransferForm()
         {
             InitializeComponent();
         }
 
-        internal TransferForm(Account acc) : this()
+        internal TransferForm(Customer c, Account acc) : this()
         {
             accFrom = acc;
+            customer = c;
             DisplayAll();
         }
 
         private void DisplayAll()
         {
             lst_acc_to.Items.Clear();
-            foreach (Account a in AccCtrl.GetCustomerAccounts(accFrom.Customer))  // is this okay?
+            foreach (Account a in AccCtrl.GetCustomerAccounts(customer))
             {
                 if (a != accFrom)
                 {
@@ -39,7 +41,7 @@ namespace BIT706_A3_OliverBerry
             }
             catch (Exception)
             {
-                // do something
+                MessageBox.Show("No accounts currently available");
             }
         }
 
@@ -65,6 +67,11 @@ namespace BIT706_A3_OliverBerry
             }
         }
 
+        private void Btn_return_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
         private Account GetSelection()
         {
             if (lst_acc_to.SelectedIndex > -1)
@@ -75,9 +82,5 @@ namespace BIT706_A3_OliverBerry
             else return null;
         }
 
-        private void Btn_return_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-        }
     }
 }

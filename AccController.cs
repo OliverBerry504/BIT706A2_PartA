@@ -7,9 +7,7 @@ namespace BIT706_A3_OliverBerry
     class AccController
     {
         private List<Account> allAccounts = new List<Account>();
-        private string errorMessage;
 
-        public string ErrorMessage { get => errorMessage; set => errorMessage = value; }
         public List<Account> AllAccounts { get => allAccounts; set => allAccounts = value; }
 
         public List<Account> GetCustomerAccounts(Customer c)
@@ -72,7 +70,7 @@ namespace BIT706_A3_OliverBerry
         {
             if (a == null)
             {
-                throw new Exception("Account object is null");
+                throw new Exception("Please select an account");
             }
             else
             {
@@ -86,14 +84,13 @@ namespace BIT706_A3_OliverBerry
             try
             {
                 accFrom.Withdraw(amount);
+                Deposit(accTo, amount);
+                return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                ErrorMessage = e.Message;
-                return false;
+                throw new Exception("Invalid transaction!");
             }
-            Deposit(accTo, amount);
-            return true;
         }
     }
 }

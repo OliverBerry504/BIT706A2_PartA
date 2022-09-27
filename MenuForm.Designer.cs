@@ -34,11 +34,11 @@ namespace BIT706_A3_OliverBerry
             // 
             // btn_mng_cst
             // 
-            this.btn_mng_cst.Location = new System.Drawing.Point(48, 55);
+            this.btn_mng_cst.Location = new System.Drawing.Point(49, 71);
             this.btn_mng_cst.Name = "btn_mng_cst";
             this.btn_mng_cst.Size = new System.Drawing.Size(144, 23);
             this.btn_mng_cst.TabIndex = 0;
-            this.btn_mng_cst.Text = "Manage Customers";
+            this.btn_mng_cst.Text = "Load Customer Data";
             this.btn_mng_cst.UseVisualStyleBackColor = true;
             this.btn_mng_cst.Click += new System.EventHandler(this.Btn_mng_cst_Click);
             // 
@@ -46,7 +46,7 @@ namespace BIT706_A3_OliverBerry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 149);
+            this.ClientSize = new System.Drawing.Size(242, 154);
             this.Controls.Add(this.btn_mng_cst);
             this.Name = "MenuForm";
             this.Text = "MenuForm";

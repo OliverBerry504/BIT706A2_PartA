@@ -8,90 +8,59 @@ namespace BIT706_A3_OliverBerry
     class CustController
     {
         private List<Customer> allCustomers = new List<Customer>();
-        private string errorMessage;
 
-        public string ErrorMessage { get => errorMessage; set => errorMessage = value; }
-        public List<Customer> AllCustomers { get => allCustomers; set => allCustomers = value; }
+        public List<Customer> AllCustomers { get => allCustomers; 
+            set => allCustomers = value; }
 
         // return customer object based on id number
         public Customer FindCustomerByID(int id)
         {
-                foreach (Customer c in AllCustomers)
+            foreach (Customer c in AllCustomers)
+            {
+                if (c.ID == id)
                 {
-                    if (c.ID == id)
-                    {
-                        return c;
-                    }
+                    return c;
                 }
-                throw new Exception("Customer does not exist");
+            }
+            throw new Exception("Customer does not exist");
         }
 
-        // create new customer
         public bool CreateCustomer(string name)
         {
-            try
+            if (Customer.ValidateCustomerName(name))
             {
-                if (!name.Any(x => char.IsLetter(x)))
-                {   // customer name must contain at least
-                    // one alphabet character
-                    throw new Exception("Invalid customer name");
-                }
-                else
-                {
-                    Customer c = new Customer(name, false);
-                    AllCustomers.Add(c);
-                    return true;
-                }
+                Customer c = new Customer(name, false);
+                AllCustomers.Add(c);
+                return true;
             }
-            catch (Exception e)
+            else
             {
-                ErrorMessage = e.Message;
-                return false;
+                // customer name must contain at least
+                // one alphabet character
+                throw new Exception("Invalid customer name");
             }
         }
 
-        // edit existing customer
         public bool EditCustomer(string newName, Customer c)
         {
-            try
+            if (Customer.ValidateCustomerName(newName))
             {
-                if (c is null)
-                {
-                    throw new Exception("Invalid customer for edit");
-                }
-                else
-                {
-                    c.ValidateCustomerName(newName);
-                    c.Name = newName;
-                    return true;
-                }
+                c.Name = newName;
+                return true;
             }
-            catch (Exception e)
-            {
-                ErrorMessage = e.Message;
-                return false;
-            }
+            else throw new Exception("Invalid customer name");
         }
 
-        // delete existing customer
         public bool DeleteCustomer(Customer c)
         {
-            try
+            if (c is null)
             {
-                if (c is null)
-                {
-                    throw new Exception("Customer object is null");
-                }
-                else
-                {
-                    AllCustomers.Remove(FindCustomerByID(c.ID));
-                    return true;
-                }
+                throw new Exception("Customer object is null");
             }
-            catch (Exception e)
+            else
             {
-                ErrorMessage = e.Message;
-                return false;
+                AllCustomers.Remove(FindCustomerByID(c.ID));
+                return true;
             }
         }
 

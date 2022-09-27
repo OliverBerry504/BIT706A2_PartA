@@ -48,7 +48,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "New Customer";
             this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btn_add.Click += new System.EventHandler(this.Btn_add_Click);
             // 
             // btn_delete
             // 
@@ -58,7 +58,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_delete.TabIndex = 1;
             this.btn_delete.Text = "Delete Selection";
             this.btn_delete.UseVisualStyleBackColor = true;
-            this.btn_delete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.btn_delete.Click += new System.EventHandler(this.Btn_delete_Click);
             // 
             // btn_edit
             // 
@@ -68,7 +68,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_edit.TabIndex = 2;
             this.btn_edit.Text = "Edit Selection";
             this.btn_edit.UseVisualStyleBackColor = true;
-            this.btn_edit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btn_edit.Click += new System.EventHandler(this.Btn_edit_Click);
             // 
             // tb_find
             // 
@@ -85,7 +85,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_find.TabIndex = 4;
             this.btn_find.Text = "Find by ID";
             this.btn_find.UseVisualStyleBackColor = true;
-            this.btn_find.Click += new System.EventHandler(this.BtnFind_Click);
+            this.btn_find.Click += new System.EventHandler(this.Btn_find_Click);
             // 
             // lst_all_cust
             // 
@@ -102,9 +102,9 @@ namespace BIT706_A3_OliverBerry
             this.btn_main_menu.Name = "btn_main_menu";
             this.btn_main_menu.Size = new System.Drawing.Size(151, 25);
             this.btn_main_menu.TabIndex = 7;
-            this.btn_main_menu.Text = "Main Menu";
+            this.btn_main_menu.Text = "Save and Exit";
             this.btn_main_menu.UseVisualStyleBackColor = true;
-            this.btn_main_menu.Click += new System.EventHandler(this.BtnMainMenu_Click);
+            this.btn_main_menu.Click += new System.EventHandler(this.Btn_main_menu_Click);
             // 
             // lb_cust_details
             // 

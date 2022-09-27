@@ -16,10 +16,11 @@ namespace BIT706_A3_OliverBerry
             InitializeComponent();
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void Btn_add_Click(object sender, EventArgs e)
         {
-            if (CustCtrl.CreateCustomer(tbAdd.Text))
+            try
             {
+                CustCtrl.CreateCustomer(tb_add.Text);
                 MessageBox.Show("Customer has been added");
 
                 // return to 'Manage Customers' window
@@ -27,13 +28,13 @@ namespace BIT706_A3_OliverBerry
                 ManageCustomersForm manageForm = new ManageCustomersForm();
                 manageForm.Show();
             }
-            else
+            catch (Exception error)
             {
-                MessageBox.Show(CustCtrl.ErrorMessage);
+                MessageBox.Show(error.Message);
             }
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void Btn_cancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             ManageCustomersForm form = new ManageCustomersForm();

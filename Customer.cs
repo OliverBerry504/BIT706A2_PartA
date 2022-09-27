@@ -29,12 +29,17 @@ namespace BIT706_A3_OliverBerry
         }
 
         // checks if name given is valid
-        public void ValidateCustomerName(string name)
-        {
-                if (!name.Any(x => char.IsLetter(x)))
-                {
-                    throw new Exception("Invalid customer name");
-                }
+        public static bool ValidateCustomerName(string name)
+        {       
+            if (name == null)
+            {
+                return false;
+            }
+            if (!name.Any(x => char.IsLetter(x)))
+            {
+                return false;
+            }
+            else return true;
         }
 
         public double Discount(double fee)

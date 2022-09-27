@@ -54,7 +54,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_deposit.TabIndex = 0;
             this.btn_deposit.Text = "Deposit";
             this.btn_deposit.UseVisualStyleBackColor = true;
-            this.btn_deposit.Click += new System.EventHandler(this.BtnDeposit_Click);
+            this.btn_deposit.Click += new System.EventHandler(this.Btn_deposit_Click);
             // 
             // btn_withdraw
             // 
@@ -65,7 +65,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_withdraw.TabIndex = 4;
             this.btn_withdraw.Text = "Withdraw";
             this.btn_withdraw.UseVisualStyleBackColor = true;
-            this.btn_withdraw.Click += new System.EventHandler(this.BtnWithdraw_Click);
+            this.btn_withdraw.Click += new System.EventHandler(this.Btn_withdraw_Click);
             // 
             // tb_amount
             // 
@@ -112,7 +112,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_info.TabIndex = 9;
             this.btn_info.Text = "Account Info";
             this.btn_info.UseVisualStyleBackColor = true;
-            this.btn_info.Click += new System.EventHandler(this.BtnInfo_Click);
+            this.btn_info.Click += new System.EventHandler(this.Btn_info_Click);
             // 
             // btn_add_Interest
             // 
@@ -123,7 +123,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_add_Interest.TabIndex = 10;
             this.btn_add_Interest.Text = "Add Interest";
             this.btn_add_Interest.UseVisualStyleBackColor = true;
-            this.btn_add_Interest.Click += new System.EventHandler(this.BtnAddInterest_Click);
+            this.btn_add_Interest.Click += new System.EventHandler(this.Btn_add_interest_Click);
             // 
             // lst_all_accs
             // 
