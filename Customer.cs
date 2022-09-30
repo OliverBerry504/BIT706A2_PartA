@@ -19,7 +19,8 @@ namespace BIT706_A3_OliverBerry
 
         public Customer()
         {
-            ID = CustIdData.NextId;
+            ID = CustIdData.NextId;  // comment this out when running Gherkin tests and de-comment the line below
+            //ID = 1;
         }
 
         public Customer(string newName, bool newIsStaff) : this()

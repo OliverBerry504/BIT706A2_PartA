@@ -108,7 +108,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_info.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_info.Location = new System.Drawing.Point(190, 108);
             this.btn_info.Name = "btn_info";
-            this.btn_info.Size = new System.Drawing.Size(165, 23);
+            this.btn_info.Size = new System.Drawing.Size(202, 23);
             this.btn_info.TabIndex = 9;
             this.btn_info.Text = "Account Info";
             this.btn_info.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_add_Interest.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_add_Interest.Location = new System.Drawing.Point(190, 79);
             this.btn_add_Interest.Name = "btn_add_Interest";
-            this.btn_add_Interest.Size = new System.Drawing.Size(165, 23);
+            this.btn_add_Interest.Size = new System.Drawing.Size(202, 23);
             this.btn_add_Interest.TabIndex = 10;
             this.btn_add_Interest.Text = "Add Interest";
             this.btn_add_Interest.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@ namespace BIT706_A3_OliverBerry
             this.btn_transfer.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_transfer.Location = new System.Drawing.Point(190, 52);
             this.btn_transfer.Name = "btn_transfer";
-            this.btn_transfer.Size = new System.Drawing.Size(165, 23);
+            this.btn_transfer.Size = new System.Drawing.Size(202, 23);
             this.btn_transfer.TabIndex = 16;
             this.btn_transfer.Text = "Transfer";
             this.btn_transfer.UseVisualStyleBackColor = true;
@@ -173,14 +173,14 @@ namespace BIT706_A3_OliverBerry
             this.panel1.Controls.Add(this.lb_info);
             this.panel1.Location = new System.Drawing.Point(190, 137);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 136);
+            this.panel1.Size = new System.Drawing.Size(202, 136);
             this.panel1.TabIndex = 17;
             // 
             // ManageAccountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 290);
+            this.ClientSize = new System.Drawing.Size(404, 290);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_transfer);
             this.Controls.Add(this.btn_create);

@@ -47,5 +47,21 @@ namespace BIT706_A3_OliverBerry
                 LastTransaction = StoreLastWithdrawal(amountOut, AccType, "Successful", 0);
             }
         }
+        // Transaction (Transfer from this account)
+        public override void TransferFrom(double amountOut)
+        {
+            if (amountOut > Balance)
+            {
+                double f = Customer.Discount(10.00); // Apply discount if appropriate 
+                Balance -= f;
+                LastTransaction = StoreLastWithdrawal(amountOut, AccType, "Failed", f);
+                throw new FailedWithdrawalException("Failed Transfer" + "\n[Acc - " + AccType + "]");
+            }
+            else
+            {
+                base.Withdraw(amountOut);
+                LastTransaction = StoreLastWithdrawal(amountOut, AccType, "Successful", 0);
+            }
+        }
     }
 }

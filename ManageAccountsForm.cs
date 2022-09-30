@@ -78,10 +78,10 @@ namespace BIT706_A3_OliverBerry
         {
             if (double.TryParse(tb_amount.Text, out double amount))
             {
-                Account acc = GetSelection();
                 try
                 {
-                    acc.Withdraw(amount);
+                    Account acc = GetSelection();
+                    AccCtrl.Withdraw(acc, amount);
                     lb_info.Text = acc.LastTransaction;
                 }
                 catch (Exception error)

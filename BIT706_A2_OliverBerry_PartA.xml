@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BIT706_A2_OliverBerry_PartA</name>
+    </assembly>
+    <members>
+        <member name="M:BIT706_A3_OliverBerry.AccController.GetCustomerAccounts(BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            returns the accounts of the selected customer
+            </summary>
+            <param name="c">The customer whose accounts are being retreived</param>
+            <returns>A list of accounts that belong to the target customer</returns>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.CreateAccEveryday(BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            Creates a new 'Everyday' account
+            </summary>
+            <param name="c">The customer who the account will belong to</param>
+            <returns>A boolean value corresponding to whather or not the account was created</returns>
+            <exception cref="T:System.Exception">Thrown if target customer object is null</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.CreateAccInvestment(BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            Creates a new 'Investment' account
+            </summary>
+            <param name="c">The customer who the account will belong to</param>
+            <returns>A boolean value corresponding to whather or not the account was created</returns>
+            <exception cref="T:System.Exception">Thrown if target customer object is null</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.CreateAccOmni(BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            Creates a new 'Omni' account
+            </summary>
+            <param name="c">The customer who the account will belong to</param>
+            <returns>A boolean value corresponding to whather or not the account was created</returns>
+            <exception cref="T:System.Exception">Thrown if target customer object is null</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.Deposit(BIT706_A3_OliverBerry.Account,System.Double)">
+            <summary>
+            Make a deposit of a determined amount into an existing account
+            </summary>
+            <param name="a">The account being deposited to</param>
+            <param name="amount">The amount to be deposited</param>
+            <returns>A boolean vlaue corresponding to whether or not the deposit was made</returns>
+            <exception cref="T:System.Exception">Thrown if no account has been selected</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.Withdraw(BIT706_A3_OliverBerry.Account,System.Double)">
+            <summary>
+            Make a withdrawal of a determined amount from an existing account
+            </summary>
+            <param name="a">the account being withdrawn from</param>
+            <param name="amount">The amount to be withdrawn</param>
+            <returns>A boolean vlaue corresponding to whether or not the deposit was made</returns>
+            <exception cref="T:System.Exception">Thrown if no account has been selected</exception>        
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AccController.Transfer(BIT706_A3_OliverBerry.Account,BIT706_A3_OliverBerry.Account,System.Double)">
+            <summary>
+            Make a transfer between two exisitng accounts
+            </summary>
+            <param name="accTo">The account that the amount is being deposited to</param>
+            <param name="accFrom">The account that the amount is being withdrawn from</param>
+            <param name="amount">The amount being exchanged</param>
+            <returns>A Boolean value corresponding to whether or not the transfer was made</returns>
+            <exception cref="T:System.Exception">Thrown if the transfer results in a failed withdrawal</exception>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.AddCustomerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AddCustomerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.AddCustomerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.CustController.FindCustomerByID(System.Int32)">
+            <summary>
+            Finds customer by their ID number
+            </summary>
+            <param name="id">The ID number of the customer being found</param>
+            <returns>Customer who the target ID belongs to</returns>
+            <exception cref="T:System.Exception">Thrown if no customer with the target ID exists</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.CustController.CreateCustomer(System.String)">
+            <summary>
+            Creates a new customer object
+            </summary>
+            <param name="name">The name of the customer being created</param>
+            <returns>Boolean value corresponding to whether or not the customer was created</returns>
+            <exception cref="T:System.Exception">Thrown if name is invalid (i.e., does not contain at least one alphabet character)</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.CustController.EditCustomer(System.String,BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            Edits an existing customer object
+            </summary>
+            <param name="newName">The updated name of the customer</param>
+            <param name="c">THe customer whose name is being updated</param>
+            <returns>>Boolean value corresponding to whether or not the customer was edited</returns>
+            <exception cref="T:System.Exception">Thrown if the new name is invalid</exception>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.CustController.DeleteCustomer(BIT706_A3_OliverBerry.Customer)">
+            <summary>
+            Removes a customer object
+            </summary>
+            <param name="c">THe customer object being removed</param>
+            <returns>Boolean value corresponding to whether or not the customer was deleted</returns>
+            <exception cref="T:System.Exception">Thrown if the target customer object is null</exception>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.EditCustomerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.EditCustomerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.EditCustomerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.ManageAccountsForm.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ManageAccountsForm.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ManageAccountsForm.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.ManageCustomersForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ManageCustomersForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ManageCustomersForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.MenuForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.MenuForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.MenuForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.ParentForm.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ParentForm.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.ParentForm.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.SelectAccountForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.SelectAccountForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.SelectAccountForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BIT706_A3_OliverBerry.TransferForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.TransferForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BIT706_A3_OliverBerry.TransferForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

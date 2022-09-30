@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT706_A2_OliverBerry_PartA", "BIT706_A2_OliverBerry_PartA.csproj", "{AFF84705-14B8-45AF-AC63-33844A664813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIT706_A2_OliverBerry_PartA", "BIT706_A2_OliverBerry_PartA.csproj", "{AFF84705-14B8-45AF-AC63-33844A664813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT706_A3", "..\BIT706_A3\BIT706_A3.csproj", "{B41D452B-5ABE-4268-8BE8-E79C574DD8A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AFF84705-14B8-45AF-AC63-33844A664813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFF84705-14B8-45AF-AC63-33844A664813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFF84705-14B8-45AF-AC63-33844A664813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B41D452B-5ABE-4268-8BE8-E79C574DD8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B41D452B-5ABE-4268-8BE8-E79C574DD8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B41D452B-5ABE-4268-8BE8-E79C574DD8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B41D452B-5ABE-4268-8BE8-E79C574DD8A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
