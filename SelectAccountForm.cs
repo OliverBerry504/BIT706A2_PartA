@@ -50,6 +50,8 @@ namespace BIT706_A3_OliverBerry
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            ManageAccountsForm form = new ManageAccountsForm(selected);
+            form.Show();
         }
     }
 }

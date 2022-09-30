@@ -1,0 +1,342 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/User/source/repos/BIT706A2_PartA",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.AccController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.AccController.html",
+          "hash": "0Soxm/qmdx4GCDv+qqmLyGAX7PeslwjiSt7CgWPZgPI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.AccIdData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.AccIdData.html",
+          "hash": "UTQTvjxZxd0dyHqyOmxqvYRBQ7mTNowTlDz9QmoOLC0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.Account.html",
+          "hash": "hvyHemuOKw7B/xrsl8v1qX6QC5n7xIdqQVwaLhDcLRc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.AddCustomerForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.AddCustomerForm.html",
+          "hash": "pr0Ivg0KSkGqyesLSJhdEG42+IEOM1RFHCu0/+frZis="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.CustIdData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.CustIdData.html",
+          "hash": "FqBtCCoQU5RrrP7mXGFJkzl0psrmn/Wx3P68sAbDLJk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.Customer.html",
+          "hash": "7JBOq6j0H9/p5qUa7hyju4gb/qk1v89luv+U0EdQjgQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.EditCustomerForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.EditCustomerForm.html",
+          "hash": "cXTujPegqukQ5VjyId7WeSsjF3sZs+gyJFabE/kzwgU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.Everyday.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.Everyday.html",
+          "hash": "AGKqg9RhPdx9LEURxHkNs/RHDWIEQHkLWY9MkAlKvK4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.FailedWithdrawalException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.FailedWithdrawalException.html",
+          "hash": "dKQBodwL2U3rTCNQa0E5BBJ6yQNB//uF2OQMJBsiiik="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.Investment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.Investment.html",
+          "hash": "A846GNBDt2K5tOqhB+bNpHYMQEPUionL21ZYnU6CHo4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.ManageAccountsForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.ManageAccountsForm.html",
+          "hash": "liJG/u/2w8j/ZOlCgR9d+xtuHkfLwPpPs1CDznRa7Mw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.ManageCustomersForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.ManageCustomersForm.html",
+          "hash": "3d5tUCb7cc3KmJa7U9jaT6lFMGhXx/LZYQQvwo8mrlA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.MenuForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.MenuForm.html",
+          "hash": "2MsZZeJx8mS8ZuraWYK7x0UpNV/N8YhayOUZuTqiUF8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.Omni.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.Omni.html",
+          "hash": "jlJq2z9DXZwy5sW89HA19yoELl9u8gIXliERztLHp60="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.ParentForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.ParentForm.html",
+          "hash": "oKVIwZv6BMqy0pGP/HPJMXXwZcg+uUAiFSggNAMrn7w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.SelectAccountForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.SelectAccountForm.html",
+          "hash": "EatuX/MsgoTyWsboR42sVkKj67bZb2IVliDOzpC5m20="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.TransferForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.TransferForm.html",
+          "hash": "zCL6/tNTAXlLZuDWstOSQz/kL7LXM66Ow+/PSbUPw9c="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIT706_A3_OliverBerry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIT706_A3_OliverBerry.html",
+          "hash": "da4are0+5hdbRpYoeX0wwBUU+ddnOCcGNeRz6rMnHB0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "g9MDCja5uK7rvNeV+KHhvfK22Da4ht6WVHsN0bQMLZU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "WjidAVLNt4if7RzRVouo5eVYvPa0H+nbU04klUFqcS8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "hbJu9fALgr9xlVts8qwXGA/EzYbQY0BmNO8ylZmSk5U="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "5WzX4yBB+fBPIF9ehtMpvtD9C/pYE4gwW4CrpmiEj4s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 18,
+          "skipped_file_count": 18
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

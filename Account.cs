@@ -24,8 +24,8 @@ namespace BIT706_A3_OliverBerry
         // ------------- Constructors ---------------
         public Account()
         {
-            //accountId = AccIdData.NextId;
-            accountId++;
+            accountId = AccIdData.NextId; // comment this out when running Gherkin tests and un-comment the line below
+            //accountId++;
 
             Balance = 0.00;
             LastTransaction = "No previous transcations!";
@@ -50,6 +50,13 @@ namespace BIT706_A3_OliverBerry
         {
             Balance -= amountOut;
         }
+
+        // Transaction (Transfer)
+        public virtual void TransferFrom(double amountOut)
+        {
+            Balance -= amountOut;
+        }
+
         // Calculate interest w/ given rate
         public static double CalcInterest(double amountIn, double rate)
         {
@@ -85,6 +92,7 @@ namespace BIT706_A3_OliverBerry
         {
             return "ID: " + AccountId + "; " + AccType;
         }
+
     }
 }
 

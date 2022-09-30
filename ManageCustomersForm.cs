@@ -149,21 +149,16 @@ namespace BIT706_A3_OliverBerry
 
         public void WriteData()
         {
-            //create a formatting object
             IFormatter formatter = new BinaryFormatter();
 
-            //Create a new IO stream to write to the file Objects.bin
             Stream stream = new FileStream("objects.bin", FileMode.Create,
             FileAccess.Write, FileShare.None);
 
-            //use the formatter to serialize the collection and send it to the filestream
             formatter.Serialize(stream, AccCtrl.AllAccounts);
             formatter.Serialize(stream, CustCtrl.AllCustomers);
             formatter.Serialize(stream, CustIdData.GetInstance());
             formatter.Serialize(stream, AccIdData.GetInstance());
 
-
-            //close the file
             stream.Close();
         }
     }
